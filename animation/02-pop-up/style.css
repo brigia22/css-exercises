@@ -27,6 +27,8 @@ button {
 }
 
 .popup-modal {
+  transition: transform .3s ease-in-out, opacity .4s ease;
+  transform: translate(-100%, -100%);
   padding: 32px 64px;
   background-color: white;
   border: 1px solid black;
@@ -34,8 +36,7 @@ button {
   position: fixed;
   top: 50%;
   left: 50%;
-  transform-origin: center;
-  transform: translate(-50%, -50%);
+  transform-origin: top;
   pointer-events: none;
   opacity: 0%;
   text-align: center;
@@ -45,6 +46,7 @@ button {
 }
 
 .backdrop {
+  transition: transform .3s ease-in-out, opacity .4s ease;
   pointer-events: none;
   position: fixed;
   inset: 0;
@@ -55,9 +57,11 @@ button {
 .popup-modal.show {
   opacity: 100%;
   pointer-events: all;
+  transform: translate(-10%, -50%);
 }
 
 .backdrop.show {
-  opacity: 30%;
+  transition: transform .3s ease-in-out, opacity .4s ease;
+  opacity: 90%;
 }
 
